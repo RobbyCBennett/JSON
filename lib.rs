@@ -32,6 +32,8 @@ enum Token
 
 impl Json
 {
+	// TODO redo with only a few allocations, which can be reused
+	// TODO add tests like from https://github.com/nst/JSONTestSuite
 	/// Parse a JSON value in linear time if the data is valid JSON
 	pub fn parse(bytes: &[u8]) -> Option<Json>
 	{
